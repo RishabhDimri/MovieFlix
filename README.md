@@ -51,7 +51,7 @@ A sleek React Native application designed to provide a Netflix-like experience, 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/react-native-movie-app.git
+   git clone https://github.com/RishabhDimri/MovieFlix.git
    ```
 
 2. Navigate to the project directory:
