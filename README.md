@@ -1,79 +1,138 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+<h1>
+  <br>
+  <img src="https://github.com/user-attachments/assets/fa892f19-2ba3-4cf7-ae5a-d9a23739e7a9" alt="image" width="100">
+  <br>MovieFlix
+  <br>
+</h1>
 
-# Getting Started
+A sleek React Native application designed to provide a Netflix-like experience, allowing users to browse, search, and view details of movies. The app uses the TVMaze API for fetching movie data and includes multiple screens for seamless navigation.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Features
 
-## Step 1: Start the Metro Server
+- **Splash Screen**: A visually appealing introductory screen with a theme-appropriate image.
+- **Home Screen**:
+  - Displays a list of movies fetched from the API endpoint: `https://api.tvmaze.com/search/shows?q=all`.
+  - Shows each movie's thumbnail, title, and summary.
+  - Clicking on a movie navigates to the **Details Screen**.
+  - Includes a search bar that redirects to the **Search Screen**.
+- **Search Screen**:
+  - Search bar allows users to search for any movie.
+  - Uses the API endpoint: `https://api.tvmaze.com/search/shows?q={search_term}`.
+  - Displays search results similar to the Home Screen.
+- **Details Screen**:
+  - Shows comprehensive details of a selected movie, including image, title, summary, and other metadata.
+- **Bottom Navigation**:
+  - Allows users to switch between the Home and Search screens easily.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## App Preview
 
-To start Metro, run the following command from the _root_ of your React Native project:
+ # Splash Screen:-
+<img width="375" height="667" alt="image" src="https://github.com/user-attachments/assets/312581df-15a6-47fc-a836-81c697a6705d"/>
+ 
+ # Home Screen:- 
+<img width="375" height="667" alt="image" src="https://github.com/user-attachments/assets/2e4798c6-c42d-4fd5-99a8-e534bddd40bf"/>
 
-```bash
-# using npm
-npm start
+ # Search Screen:-
+ <img width="375" height="667" alt="image" src="https://github.com/user-attachments/assets/f59e9a3a-31b2-4ac8-9c9a-060799392bfc"/>
+ 
+ # DetailScreen:- 
+ <img width="375" height="667" alt="image" src="https://github.com/user-attachments/assets/614db539-66a1-4b67-9f16-da850e3e3509"/>
+  
+  # DetailScreen:- 
+<img width="375" height="667" alt="image" src="https://github.com/user-attachments/assets/bb1a6b86-bd0d-4cc8-a9e7-131e4ce982a6"/>
 
-# OR using Yarn
-yarn start
+## Tech Stack
+
+- **React Native**: Frontend framework for building cross-platform mobile apps.
+- **API**: TVMaze API for movie data.
+- **Navigation**: React Navigation for screen transitions and bottom navigation.
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/react-native-movie-app.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd react-native-movie-app
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+   ```bash
+   npm start
+   ```
+
+5. Run the app on an emulator or a physical device:
+   - For iOS:
+     ```bash
+     npx react-native run-ios
+     ```
+   - For Android:
+     ```bash
+     npx react-native run-android
+     ```
+
+## API Endpoints
+
+- **Get all movies**: `https://api.tvmaze.com/search/shows?q=all`
+- **Search movies**: `https://api.tvmaze.com/search/shows?q={search_term}`
+
+## Screens Overview
+
+1. **Splash Screen**:
+   - Displays a full-screen image representing the app's theme.
+
+2. **Home Screen**:
+   - Fetches and displays movies from the API.
+   - Includes a search bar that redirects to the Search Screen.
+   - Each movie card is clickable and navigates to the Details Screen.
+
+3. **Search Screen**:
+   - Includes a functional search bar for querying movies.
+   - Displays results in the same format as the Home Screen.
+
+4. **Details Screen**:
+   - Displays detailed information about a selected movie, including an image, title, summary, and additional metadata.
+
+## Folder Structure
+
+```
+MovieApp/
+│
+├── src/
+│   ├── screens/
+│   │   ├── SplashScreen.js
+│   │   ├── HomeScreen.js
+│   │   ├── SearchScreen.js
+│   │   ├── DetailsScreen.js
+│   ├── assets/
+│   │   ├── home_24dp_E8EAED.png
+│   │   ├── search_24dp_E8EAED.png
+│   ├── navigation/
+│   │   ├── MainStackNavigation.js 
+│   │   ├── AppNavigator.js 
+│   │   ├── BottomTabNavigator.js  
+├── App.jsx 
+└── package.json
 ```
 
-## Step 2: Start your Application
+## Dependencies
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+- **React Native**
+- **React Navigation**
+- **Axios** (for API calls)
+- **TVMaze API**
 
-### For Android
+## Future Enhancements
 
-```bash
-# using npm
-npm run android
+- Add user authentication.
+- Allow users to save favorite movies.
+- Implement offline mode with local storage.
 
-# OR using Yarn
-yarn android
-```
-
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
